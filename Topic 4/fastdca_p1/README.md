@@ -1,4 +1,4 @@
-# 🚀 {{🚀 FastAPI Parameters Made Easy: A Beginner-Friendly Guide with Real-Life Examples}}
+# 🚀 FastAPI Parameters Made Easy: A Beginner-Friendly Guide with Real-Life Examples
 
 ![Banner logo](https://gpttutorpro.com/wp-content/uploads/2024/02/a-professor-robot-is-teaching-a-tutorial-with-the-title-fastapi-basics-path-parameters-query-parameters-and-request-body-in-a-boardroom.jpeg)
 > 📖 {{Short Description}}
