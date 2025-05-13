@@ -53,8 +53,9 @@ source env/bin/activate
 ````
 
 2. 🧩 Install Dependencies
-bash
+```bash
 pip install fastapi uvicorn pydantic
+```
 
 🧱 Code Explanation
 📄 schemas.py
@@ -72,18 +73,22 @@ Task: Output model with id and user_id
 
 Validation:
 
-python
+```python
 @field_validator('due_date')
 def validate_due_date(cls, value):
     if value < date.today():
         raise ValueError("Due date cannot be in the past")
     return value
+```
+
 📄 models.py
 Simulates a database using Python lists:
 
-python
+```python
 users_db: List[UserRead] = []
 tasks_db: List[Task] = []
+```
+
 📄 main.py
 Core FastAPI app:
 
@@ -101,7 +106,7 @@ GET /users/{user_id}/tasks: List user’s tasks
 
 Example:
 
-python
+```python
 @app.post("/users/", response_model=UserRead)
 def create_user(user: UserCreate):
     global user_id_counter
@@ -109,7 +114,8 @@ def create_user(user: UserCreate):
     users_db.append(new_user)
     user_id_counter += 1
     return new_user
-    
+```
+
 ▶️ Run the App
 bash
 uvicorn main:app --reload
