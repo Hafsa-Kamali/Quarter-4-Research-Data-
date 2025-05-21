@@ -1,0 +1,40 @@
+# Why is the `Agent` Class a Python Dataclass in OpenAI Agents SDK?
+
+## Overview
+
+The `Agent` class in the OpenAI Agents SDK is implemented as a Python dataclass. This design choice simplifies how agents are defined and managed within the SDK. This README explains the reasons and benefits behind using the `@dataclass` decorator for the `Agent` class.
+
+---
+
+## What is a Dataclass?
+
+- Introduced in Python 3.7 via the `dataclasses` module.
+- Simplifies class definitions that primarily store data.
+- Automatically generates methods like `__init__()`, `__repr__()`, and `__eq__()`.
+- Reduces boilerplate code and improves readability.
+
+---
+
+## Purpose of the `Agent` Class
+
+The `Agent` class holds key information such as:
+
+- Agent’s **name** (e.g., "Assistant")
+- System **instructions** or prompt guiding the agent’s behavior
+- The **model** (LLM) the agent uses for generating responses
+- Optional attributes like memory, tools, and context
+
+It primarily acts as a **structured data container**.
+
+---
+
+## Why Use `@dataclass` for the `Agent` Class?
+
+### 1. Cleaner & Concise Code
+
+```python
+@dataclass
+class Agent:
+    name: str
+    instructions: str
+    model: Any
