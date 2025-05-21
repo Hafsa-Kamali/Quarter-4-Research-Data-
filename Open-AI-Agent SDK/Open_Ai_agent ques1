@@ -38,3 +38,61 @@ class Agent:
     name: str
     instructions: str
     model: Any
+
+Reduces the need to write explicit constructors.
+
+2. Better Debugging & Readability
+Dataclasses provide a default __repr__ method, making it easier to print and inspect agent instances.
+
+Example output:
+
+pgsql
+Copy
+Edit
+Agent(name='Assistant', instructions='Be helpful.', model='gpt-4')
+3. Enhanced Type Safety & IDE Support
+Explicit type annotations help IDEs with:
+
+Autocompletion
+
+Type checking
+
+Error detection
+
+4. Fits Data-Only Class Use Case
+Agent is mainly used to store configuration data without complex methods, perfectly matching dataclasses' intent.
+
+5. Support for Defaults & Comparisons
+Dataclasses allow setting default values and enable easy equality checks, useful for managing multiple agents or testing.
+
+Real-World Analogy
+Think of an Agent class like a CakeOrder dataclass in a bakery system:
+
+
+@dataclass
+class CakeOrder:
+    customer_name: str
+    flavor: str
+    size: str
+
+Both are simple containers for data without behavior — ideal for dataclasses.
+
+Summary
+Using @dataclass for the Agent class in the OpenAI Agents SDK:
+
+Minimizes boilerplate
+
+Improves clarity and maintainability
+
+Aligns with Python best practices
+
+Provides useful built-in features like initialization, representation, and equality
+
+This design enhances developer experience and keeps the SDK clean and efficient.
+
+References
+Python Dataclasses Documentation
+
+PEP 557 – Data Classes
+
+OpenAI Agents SDK Documentation
